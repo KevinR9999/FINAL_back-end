@@ -14,12 +14,9 @@ app.use(express.json());
 app.use(express.static(__dirname));
 
 const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASS,
-  port: process.env.DB_PORT,
+    connectionString: 'postgresql://neondb_owner:npg_fuvzxk5p6WmY@ep-red-cell-a811ag8v-pooler.eastus2.azure.neon.tech/neondb?sslmode=require'
 });
+
 
 // Registro de usuario
 app.post('/api/registro', async (req, res) => {
